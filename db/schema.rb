@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_183735) do
 
   create_table "currencies", force: :cascade do |t|
     t.string "name"
-    t.integer "rate"
+    t.float "rate"
   end
 
 end
