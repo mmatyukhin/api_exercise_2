@@ -1,24 +1,19 @@
-# README
+### Endpoints
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### To get all currencies on page:
+  `GET /currencies?page=[page_number]`
 
-Things you may want to cover:
+##### To get currency by id:
+  `GET /currencies/[currency_id]`
 
-* Ruby version
+  Both requests require authentication token in request headers as `Authorization: token`
+  
+##### Valid token is:
+  `eyJhbGciOiJIUzI1NiJ9.InNlY3VyZSBzdHJpbmci._EZH5dX9UCDY_L1NbOv4-wpyPrUly-XMfWNLqn2fDjk`
+### Requests examples for localhost
+  `curl -X GET -H 'Authorization: eyJhbGciOiJIUzI1NiJ9.InNlY3VyZSBzdHJpbmci._EZH5dX9UCDY_L1NbOv4-wpyPrUly-XMfWNLqn2fDjk' -d "page=1" localhost:3000/currencies`
 
-* System dependencies
+------------
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  `curl -X GET -H 'Authorization: eyJhbGciOiJIUzI1NiJ9.InNlY3VyZSBzdHJpbmci._EZH5dX9UCDY_L1NbOv4-wpyPrUly-XMfWNLqn2fDjk' localhost:3000/currencies/1`
