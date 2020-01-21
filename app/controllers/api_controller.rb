@@ -5,7 +5,14 @@ class ApiController < ApplicationController
 
   def authenticate_request!
     token = request.headers['Authorization']
-    JWT.decode(token, 'secret') == VERY_SECURE_STRING
+    JWT.decode(token, 'secret')[0] == VERY_SECURE_STRING
+  rescue StandardError
+    invalid_authentication
+  end
+
+  def invalid_authentication
+    render json: { error: 'Wrong authorization token!' }, status: :unauthorized
+    false
   end
 
   private
