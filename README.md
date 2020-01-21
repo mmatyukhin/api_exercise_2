@@ -1,4 +1,4 @@
-### Endpoints
+## Endpoints
 
 ##### To get all currencies on page:
   `GET /currencies?page=[page_number]`
@@ -9,8 +9,9 @@
   Both requests require authentication token in request headers as `Authorization: token`
   
 ##### Valid token is:
+
   `eyJhbGciOiJIUzI1NiJ9.InNlY3VyZSBzdHJpbmci._EZH5dX9UCDY_L1NbOv4-wpyPrUly-XMfWNLqn2fDjk`
-### Requests examples for localhost
+## Requests examples for localhost
   `curl -X GET -H 'Authorization: eyJhbGciOiJIUzI1NiJ9.InNlY3VyZSBzdHJpbmci._EZH5dX9UCDY_L1NbOv4-wpyPrUly-XMfWNLqn2fDjk' -d "page=1" localhost:3000/currencies`
 
 ------------
