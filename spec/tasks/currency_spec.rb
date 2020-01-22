@@ -1,15 +1,12 @@
 require 'rails_helper'
-Rails.application.load_tasks
 
 describe 'currency.rake' do
-  context 'before rake task run' do
-    it 'currencies should be empty' do
-      expect(Currency.count).to eq(0)
-    end
+  before do
+    Rails.application.load_tasks
   end
 
   context 'after rake task run' do
-    it 'updates currencies' do
+    it 'load 34 currencies' do
       Rake::Task['currency:update'].invoke
       expect(Currency.count).to eq(34)
     end

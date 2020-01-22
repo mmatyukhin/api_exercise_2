@@ -2,7 +2,10 @@ require 'rails_helper'
 Rails.application.load_tasks
 
 RSpec.describe CurrenciesController, type: :controller do
-  Rake::Task['currency:update'].invoke
+  before do
+    Rake::Task['currency:update'].invoke
+  end
+
   let(:token) do
     JWT.encode('secure string', 'secret')
   end
