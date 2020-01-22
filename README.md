@@ -1,9 +1,17 @@
+## Currencies update
+
+##### To update currencies rates run rake task
+
+  `rake currency:update`
+
 ## Endpoints
 
 ##### To get all currencies on selected page:
+
   `GET /currencies?page=[page_number]`
 
 ##### To get selected currency by id:
+
   `GET /currencies/[currency_id]`
 
   Both requests require authentication token in request headers as `Authorization: token`
